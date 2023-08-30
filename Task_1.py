@@ -3,6 +3,7 @@ import logging
 #logging.basicConfig(level=logging.ERROR, encoding='utf-8')
 
 def isPifagorTriangle(vertices: list):
+    '''Проверяем могут ли это быть вершины Пифагорова треугольника'''
     try:
         if len(vertices) != 3:
             raise ValueError("В списке не 3 элемента")
@@ -10,7 +11,7 @@ def isPifagorTriangle(vertices: list):
         vertices.sort()
         return vertices[2]**2 == vertices[0]**2 + vertices[1]**2
     except Exception as e :
-        logging.error(f"Упс, ошибка: {e}")
+        logging.error(f"Error: {e}")
         return False
 
 print(isPifagorTriangle([5,3,4]))
